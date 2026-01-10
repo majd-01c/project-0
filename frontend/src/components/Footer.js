@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 /**
@@ -9,64 +10,62 @@ import './Footer.css';
  * - Copyright information
  */
 function Footer() {
-  const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="footer" role="contentinfo">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>Emergency Disclaimer</h3>
+          <h3>{t('footer.disclaimer')}</h3>
           <p className="disclaimer">
-            ⚠️ <strong>This website does not replace emergency services.</strong> If you are in
-            immediate danger, please call emergency services (197 in Tunisia)
-            emergency room.
+            ⚠️ <strong>{t('footer.disclaimerText')}</strong>
           </p>
         </div>
 
         <div className="footer-section">
-          <h3>Quick Links</h3>
+          <h3>{t('footer.quickLinks')}</h3>
           <ul>
             <li>
-              <a href="#resources">Crisis Resources</a>
+              <a href="#resources">{t('nav.resources')}</a>
             </li>
             <li>
-              <a href="#hotline">24/7 Hotline</a>
+              <a href="#hotline">{t('header.hotline')}</a>
             </li>
             <li>
-              <a href="#privacy">Privacy Policy</a>
+              <a href="#privacy">{t('footer.privacyPolicy')}</a>
             </li>
             <li>
-              <a href="#terms">Terms of Service</a>
+              <a href="#terms">{t('footer.termsOfService')}</a>
             </li>
           </ul>
         </div>
 
         <div className="footer-section">
-          <h3>Contact Us</h3>
+          <h3>{t('footer.contactUs')}</h3>
           <p>
-            Email: <a href="mailto:support@m3ak.com">support@m3ak.com</a>
+            {t('footer.emailLabel')}: <a href="mailto:support@m3ak.com">{t('footer.email')}</a>
           </p>
           <p>
-            Phone: <a href="tel:+21653701678">+21653701678-HELP-NOW</a>
+            {t('footer.phoneLabel')}: <a href="tel:+21653701678">{t('header.hotlineNumber')}</a>
           </p>
         </div>
 
         <div className="footer-section">
-          <h3>Follow Us</h3>
+          <h3>{t('footer.followUs')}</h3>
           <ul className="social-links">
             <li>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                Twitter
+                {t('footer.twitter')}
               </a>
             </li>
             <li>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                Facebook
+                {t('footer.facebook')}
               </a>
             </li>
             <li>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                Instagram
+                {t('footer.instagram')}
               </a>
             </li>
           </ul>
@@ -75,8 +74,7 @@ function Footer() {
 
       <div className="footer-bottom">
         <p>
-          &copy; {currentYear} M3ak. All rights reserved. | Dedicated to mental health
-          awareness and suicide prevention.
+          {t('footer.copyright')} | {t('footer.dedicatedTo')}
         </p>
       </div>
     </footer>

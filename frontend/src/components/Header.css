@@ -40,6 +40,12 @@
   flex-wrap: wrap;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
 .logo {
   display: flex;
   align-items: center;

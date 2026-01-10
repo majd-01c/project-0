@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './HomePage.css';
 
 /**
@@ -10,36 +11,37 @@ import './HomePage.css';
  * - Key benefits
  */
 function HomePage() {
+  const { t } = useTranslation();
+
   return (
     <main id="main-content">
       {/* Hero Section */}
       <section className="hero" aria-label="Welcome section">
         <div className="hero-content">
-          <h1>You Are Not Alone</h1>
+          <h1>{t('home.title')}</h1>
           <p className="hero-subtitle">
-            We're here to help. Connect with compassionate professionals and find support when you
-            need it most.
+            {t('home.subtitle')}
           </p>
 
           {/* Emergency Hotline - Very Visible */}
           <div className="emergency-hotline" role="region" aria-label="Emergency hotline">
-            <p className="hotline-text">In crisis right now?</p>
+            <p className="hotline-text">{t('home.emergency')}</p>
             <a href="tel:+21653701678" className="hotline-link">
-              📞 Call Now: 53701678-HELP-NOW
+              📞 {t('home.callNow')}: {t('header.hotlineNumber')}
             </a>
-            <p className="hotline-available">Available 24/7</p>
+            <p className="hotline-available">{t('home.available247')}</p>
           </div>
 
           {/* CTA Buttons */}
           <div className="hero-buttons">
             <button className="btn-primary btn-large" aria-label="Call now for immediate help">
-              <span className="btn-icon">📞</span> Call Now
+              <span className="btn-icon">📞</span> {t('home.callNow')}
             </button>
             <button className="btn-secondary btn-large" aria-label="Chat with a psychologist">
-              <span className="btn-icon">💬</span> Chat with a Psychologist
+              <span className="btn-icon">💬</span> {t('home.connectWithCounselor')}
             </button>
             <button className="btn-outline btn-large" aria-label="Get help and resources">
-              <span className="btn-icon">📚</span> Get Help
+              <span className="btn-icon">📚</span> {t('home.exploreResources')}
             </button>
           </div>
         </div>
@@ -56,104 +58,100 @@ function HomePage() {
 
       {/* Why We Exist */}
       <section className="why-section" aria-labelledby="why-heading">
-        <h2 id="why-heading">Why We Exist</h2>
+        <h2 id="why-heading">{t('home.ourServices')}</h2>
         <p className="section-intro">
-          Suicide is a complex issue affecting millions worldwide. Our mission is to provide
-          immediate support, compassionate care, and professional guidance to those struggling.
+          {t('home.mentalHealthDesc')}
         </p>
 
         <div className="stats-grid">
           <div className="stat-card">
             <div className="stat-number">1 in 5</div>
-            <p>Adults experience mental illness annually</p>
+            <p>{t('home.mentalHealthSupport')}</p>
           </div>
           <div className="stat-card">
             <div className="stat-number">24/7</div>
-            <p>Professional support available anytime</p>
+            <p>{t('home.crisisSupportDesc')}</p>
           </div>
           <div className="stat-card">
             <div className="stat-number">100%</div>
-            <p>Confidential and judgment-free</p>
+            <p>{t('home.confidentiality')}</p>
           </div>
           <div className="stat-card">
             <div className="stat-number">∞</div>
-            <p>Your life has unlimited potential</p>
+            <p>{t('home.hope')}</p>
           </div>
         </div>
       </section>
 
       {/* Services */}
       <section className="services-section" aria-labelledby="services-heading">
-        <h2 id="services-heading">How We Help</h2>
+        <h2 id="services-heading">{t('home.ourServices')}</h2>
 
         <div className="services-grid">
           <div className="service-card">
             <div className="service-icon">☎️</div>
-            <h3>24/7 Hotline</h3>
-            <p>Immediate support from trained professionals available around the clock.</p>
+            <h3>{t('home.crisisSupport')}</h3>
+            <p>{t('home.crisisSupportDesc')}</p>
           </div>
 
           <div className="service-card">
             <div className="service-icon">💬</div>
-            <h3>Chat Support</h3>
-            <p>Confidential conversations with psychologists via secure messaging.</p>
+            <h3>{t('home.mentalHealthSupport')}</h3>
+            <p>{t('home.mentalHealthDesc')}</p>
           </div>
 
           <div className="service-card">
             <div className="service-icon">👥</div>
-            <h3>Professional Counseling</h3>
-            <p>One-on-one sessions with licensed psychologists and therapists.</p>
+            <h3>{t('home.mentalHealthSupport')}</h3>
+            <p>{t('home.mentalHealthDesc')}</p>
           </div>
 
           <div className="service-card">
             <div className="service-icon">📚</div>
-            <h3>Resources & Tools</h3>
-            <p>Educational materials, coping strategies, and crisis management guides.</p>
+            <h3>{t('home.selfCareTools')}</h3>
+            <p>{t('home.selfCareDesc')}</p>
           </div>
         </div>
       </section>
 
       {/* Core Values */}
       <section className="values-section" aria-labelledby="values-heading">
-        <h2 id="values-heading">Our Core Values</h2>
+        <h2 id="values-heading">{t('home.ourValues')}</h2>
 
         <div className="values-grid">
           <div className="value-item">
-            <h3>💚 Empathy</h3>
-            <p>We listen without judgment and validate your feelings and experiences.</p>
+            <h3>💚 {t('home.compassion')}</h3>
+            <p>{t('home.compassionDesc')}</p>
           </div>
 
           <div className="value-item">
-            <h3>🔒 Confidentiality</h3>
-            <p>Your privacy and trust are sacred. All conversations are completely confidential.</p>
+            <h3>🔒 {t('home.confidentiality')}</h3>
+            <p>{t('home.confidentialityDesc')}</p>
           </div>
 
           <div className="value-item">
-            <h3>🤝 Respect</h3>
-            <p>We honor your dignity and autonomy in every interaction.</p>
+            <h3>🤝 {t('home.compassion')}</h3>
+            <p>{t('home.compassionDesc')}</p>
           </div>
 
           <div className="value-item">
-            <h3>💪 Hope</h3>
-            <p>We believe in your resilience and potential for a better tomorrow.</p>
+            <h3>💪 {t('home.hope')}</h3>
+            <p>{t('home.hopeMessage')}</p>
           </div>
         </div>
       </section>
 
       {/* Hope Message */}
       <section className="hope-section" aria-labelledby="hope-heading">
-        <h2 id="hope-heading">There is Always Hope</h2>
+        <h2 id="hope-heading">{t('home.hope')}</h2>
         <p>
-          Whatever you're going through, you don't have to face it alone. Reaching out is a sign
-          of strength, not weakness. Our trained professionals are here to support you every step of
-          the way.
+          {t('home.hopeMessage')}
         </p>
         <p>
-          Your life has value. Your feelings matter. And you deserve support and compassion during
-          your darkest moments.
+          {t('home.subtitle')}
         </p>
         <button className="btn-primary btn-large">
-          <span className="btn-icon">💬</span> Start Conversation Now
+          <span className="btn-icon">💬</span> {t('home.connectWithCounselor')}
         </button>
       </section>
     </main>

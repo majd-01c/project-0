@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './ResourcesPage.css';
 
 /**
@@ -6,37 +7,39 @@ import './ResourcesPage.css';
  * Crisis resources, warning signs, coping strategies, and grounding techniques
  */
 function ResourcesPage() {
+  const { t } = useTranslation();
+
   return (
     <main id="main-content">
       <section className="resources-hero">
-        <h1>Help & Resources</h1>
-        <p>Knowledge and tools to support your mental health journey</p>
+        <h1>{t('resources.title')}</h1>
+        <p>{t('resources.subtitle')}</p>
       </section>
 
       <div className="resources-content">
         {/* Emergency Resources */}
         <section className="resource-section emergency-resources">
-          <h2>🚨 If You're in Crisis Right Now</h2>
+          <h2>🚨 {t('resources.inCrisis')}</h2>
           <div className="crisis-box">
             <p>
-              <strong>If you're having thoughts of suicide or in immediate danger:</strong>
+              <strong>{t('resources.crisisMessage')}</strong>
             </p>
             <div className="crisis-contacts">
               <div className="contact-item">
-                <h3>Call 197</h3>
-                <p>United States Emergency Services</p>
+                <h3>{t('resources.emergencyService1')}</h3>
+                <p>{t('resources.emergencyServiceDesc1')}</p>
               </div>
               <div className="contact-item">
-                <h3>53701678-HELP-NOW </h3>
-                <p>National Suicide Prevention Lifeline - Available 24/7</p>
+                <h3>{t('resources.emergencyService2')}</h3>
+                <p>{t('resources.emergencyServiceDesc2')}</p>
               </div>
               <div className="contact-item">
-                <h3>Crisis Text Line</h3>
-                <p>Text HOME to 741741</p>
+                <h3>{t('resources.emergencyService3')}</h3>
+                <p>{t('resources.emergencyServiceDesc3')}</p>
               </div>
               <div className="contact-item">
-                <h3>Go to Nearest Emergency Room</h3>
-                <p>Get immediate professional medical attention</p>
+                <h3>{t('resources.emergencyService4')}</h3>
+                <p>{t('resources.emergencyServiceDesc4')}</p>
               </div>
             </div>
           </div>
@@ -44,54 +47,51 @@ function ResourcesPage() {
 
         {/* Warning Signs */}
         <section className="resource-section">
-          <h2>⚠️ Warning Signs of Suicide</h2>
-          <p>
-            If you notice these signs in yourself or someone you care about, reach out for help
-            immediately:
-          </p>
+          <h2>⚠️ {t('resources.warningSignals')}</h2>
+          <p>{t('resources.warningSignalsIntro')}</p>
 
           <div className="warning-signs-grid">
             <div className="warning-card">
-              <h3>Behavioral Changes</h3>
+              <h3>{t('resources.behavioral')}</h3>
               <ul>
-                <li>Withdrawal from family and friends</li>
-                <li>Sudden changes in behavior or mood</li>
-                <li>Giving away possessions</li>
-                <li>Increased substance use</li>
-                <li>Reckless behavior</li>
+                <li>{t('resources.behavioral1')}</li>
+                <li>{t('resources.behavioral2')}</li>
+                <li>{t('resources.behavioral3')}</li>
+                <li>{t('resources.behavioral4')}</li>
+                <li>{t('resources.behavioral5')}</li>
               </ul>
             </div>
 
             <div className="warning-card">
-              <h3>Emotional Signs</h3>
+              <h3>{t('resources.emotional')}</h3>
               <ul>
-                <li>Persistent sadness or hopelessness</li>
-                <li>Feelings of worthlessness or guilt</li>
-                <li>Extreme mood swings</li>
-                <li>Overwhelming anger or rage</li>
-                <li>Feeling trapped or in unbearable pain</li>
+                <li>{t('resources.emotional1')}</li>
+                <li>{t('resources.emotional2')}</li>
+                <li>{t('resources.emotional3')}</li>
+                <li>{t('resources.emotional4')}</li>
+                <li>{t('resources.emotional5')}</li>
               </ul>
             </div>
 
             <div className="warning-card">
-              <h3>Verbal Signs</h3>
+              <h3>{t('resources.verbal')}</h3>
               <ul>
-                <li>Talking about death or suicide</li>
-                <li>Expressing feeling like a burden</li>
-                <li>Saying goodbye to people</li>
-                <li>Talking about being trapped</li>
-                <li>"Everyone would be better off without me"</li>
+                <li>{t('resources.verbal1')}</li>
+                <li>{t('resources.verbal2')}</li>
+                <li>{t('resources.verbal3')}</li>
+                <li>{t('resources.verbal4')}</li>
+                <li>{t('resources.verbal5')}</li>
               </ul>
             </div>
 
             <div className="warning-card">
-              <h3>Situational Risk Factors</h3>
+              <h3>{t('resources.situational')}</h3>
               <ul>
-                <li>Loss of a loved one or relationship</li>
-                <li>Job or financial problems</li>
-                <li>Access to means (weapons, medications)</li>
-                <li>History of mental illness or trauma</li>
-                <li>Recent discharge from psychiatric hospital</li>
+                <li>{t('resources.situational1')}</li>
+                <li>{t('resources.situational2')}</li>
+                <li>{t('resources.situational3')}</li>
+                <li>{t('resources.situational4')}</li>
+                <li>{t('resources.situational5')}</li>
               </ul>
             </div>
           </div>
@@ -99,52 +99,37 @@ function ResourcesPage() {
 
         {/* What to Do in Crisis */}
         <section className="resource-section">
-          <h2>💪 What to Do If Someone is in Crisis</h2>
+          <h2>💪 {t('resources.whatToDo')}</h2>
 
           <div className="steps-container">
             <div className="step">
               <div className="step-number">1</div>
-              <h3>Stay Calm and Take It Seriously</h3>
-              <p>
-                Never dismiss what they're saying. Listen without judgment and show you care about
-                their wellbeing.
-              </p>
+              <h3>{t('resources.step1Title')}</h3>
+              <p>{t('resources.step1Desc')}</p>
             </div>
 
             <div className="step">
               <div className="step-number">2</div>
-              <h3>Ask Directly</h3>
-              <p>
-                Don't be afraid to ask "Are you thinking about suicide?" This doesn't plant the idea
-                – it opens communication.
-              </p>
+              <h3>{t('resources.step2Title')}</h3>
+              <p>{t('resources.step2Desc')}</p>
             </div>
 
             <div className="step">
               <div className="step-number">3</div>
-              <h3>Listen Without Judgment</h3>
-              <p>
-                Let them express their feelings. Validate their emotions even if you don't understand
-                their thoughts.
-              </p>
+              <h3>{t('resources.step3Title')}</h3>
+              <p>{t('resources.step3Desc')}</p>
             </div>
 
             <div className="step">
               <div className="step-number">4</div>
-              <h3>Keep Them Safe</h3>
-              <p>
-                Remove access to means of harm if possible (weapons, medication). Stay with them or
-                ensure they're with a trusted person.
-              </p>
+              <h3>{t('resources.step4Title')}</h3>
+              <p>{t('resources.step4Desc')}</p>
             </div>
 
             <div className="step">
               <div className="step-number">5</div>
-              <h3>Get Professional Help</h3>
-              <p>
-                Contact a mental health professional, call the National Suicide Prevention Lifeline,
-                or go to an emergency room.
-              </p>
+              <h3>{t('resources.step5Title')}</h3>
+              <p>{t('resources.step5Desc')}</p>
             </div>
 
             <div className="step">
@@ -160,175 +145,147 @@ function ResourcesPage() {
 
         {/* Coping Strategies */}
         <section className="resource-section">
-          <h2>🧠 Healthy Coping Strategies</h2>
+          <h2>🧠 {t('resources.copingStrategies')}</h2>
 
           <div className="coping-strategies">
             <div className="strategy-card">
-              <h3>🏃 Physical Activity</h3>
-              <p>
-                Exercise releases endorphins and reduces stress. Even a 20-minute walk can improve
-                mood and mental clarity.
-              </p>
+              <h3>🏃 {t('resources.copingPhysical')}</h3>
+              <p>{t('resources.copingPhysicalDesc')}</p>
             </div>
 
             <div className="strategy-card">
-              <h3>🧘 Mindfulness & Meditation</h3>
-              <p>
-                Practice being present in the moment. Guided meditation apps can help reduce anxiety
-                and racing thoughts.
-              </p>
+              <h3>🧘 {t('resources.copingMindfulness')}</h3>
+              <p>{t('resources.copingMindfulnessDesc')}</p>
             </div>
 
             <div className="strategy-card">
-              <h3>📝 Journaling</h3>
-              <p>
-                Writing down your feelings helps process emotions and identify patterns. No judgment
-                – just honest expression.
-              </p>
+              <h3>📝 {t('resources.copingJournaling')}</h3>
+              <p>{t('resources.copingJournalingDesc')}</p>
             </div>
 
             <div className="strategy-card">
-              <h3>👥 Social Connection</h3>
-              <p>
-                Reach out to trusted friends or family. Connection is protective. Even a text to
-                someone can help.
-              </p>
+              <h3>👥 {t('resources.copingSocial')}</h3>
+              <p>{t('resources.copingSocialDesc')}</p>
             </div>
 
             <div className="strategy-card">
-              <h3>💤 Sleep & Nutrition</h3>
-              <p>
-                Prioritize sleep and eat regular, nutritious meals. Physical health directly impacts
-                mental wellbeing.
-              </p>
+              <h3>💤 {t('resources.copingSleep')}</h3>
+              <p>{t('resources.copingSleepDesc')}</p>
             </div>
 
             <div className="strategy-card">
-              <h3>🎨 Creative Expression</h3>
-              <p>
-                Art, music, writing, or any creative outlet helps process emotions in healthy ways.
-              </p>
+              <h3>🎨 {t('resources.copingCreative')}</h3>
+              <p>{t('resources.copingCreativeDesc')}</p>
             </div>
           </div>
         </section>
 
         {/* Grounding Techniques */}
         <section className="resource-section">
-          <h2>⚓ Grounding & Breathing Techniques</h2>
-          <p>
-            When you're feeling overwhelmed or panicked, these techniques can help bring you back
-            to the present moment:
-          </p>
+          <h2>⚓ {t('resources.groundingTechniques')}</h2>
+          <p>{t('resources.groundingIntro')}</p>
 
           <div className="techniques-grid">
             <div className="technique-card">
-              <h3>5-4-3-2-1 Grounding Technique</h3>
+              <h3>{t('resources.technique1Title')}</h3>
               <ol>
-                <li>Notice 5 things you can see</li>
-                <li>Notice 4 things you can touch</li>
-                <li>Notice 3 things you can hear</li>
-                <li>Notice 2 things you can smell</li>
-                <li>Notice 1 thing you can taste</li>
+                <li>{t('resources.technique1Step1')}</li>
+                <li>{t('resources.technique1Step2')}</li>
+                <li>{t('resources.technique1Step3')}</li>
+                <li>{t('resources.technique1Step4')}</li>
+                <li>{t('resources.technique1Step5')}</li>
               </ol>
-              <p className="technique-description">
-                This grounds you in the present moment and away from anxious thoughts.
-              </p>
+              <p className="technique-description">{t('resources.technique1Desc')}</p>
             </div>
 
             <div className="technique-card">
-              <h3>Box Breathing (4-4-4-4)</h3>
+              <h3>{t('resources.technique2Title')}</h3>
               <ol>
-                <li>Breathe in for 4 counts</li>
-                <li>Hold breath for 4 counts</li>
-                <li>Breathe out for 4 counts</li>
-                <li>Hold for 4 counts, then repeat</li>
+                <li>{t('resources.technique2Step1')}</li>
+                <li>{t('resources.technique2Step2')}</li>
+                <li>{t('resources.technique2Step3')}</li>
+                <li>{t('resources.technique2Step4')}</li>
               </ol>
-              <p className="technique-description">
-                Regulates your nervous system and reduces anxiety and panic.
-              </p>
+              <p className="technique-description">{t('resources.technique2Desc')}</p>
             </div>
 
             <div className="technique-card">
-              <h3>Body Scan Relaxation</h3>
+              <h3>{t('resources.technique3Title')}</h3>
               <ol>
-                <li>Sit comfortably and close your eyes</li>
-                <li>Starting at your toes, notice any tension</li>
-                <li>Gradually move attention up your body</li>
-                <li>Consciously relax each muscle group</li>
+                <li>{t('resources.technique3Step1')}</li>
+                <li>{t('resources.technique3Step2')}</li>
+                <li>{t('resources.technique3Step3')}</li>
+                <li>{t('resources.technique3Step4')}</li>
               </ol>
-              <p className="technique-description">
-                Releases physical tension and promotes relaxation and awareness.
-              </p>
+              <p className="technique-description">{t('resources.technique3Desc')}</p>
             </div>
 
             <div className="technique-card">
-              <h3>Progressive Muscle Relaxation</h3>
+              <h3>{t('resources.technique4Title')}</h3>
               <ol>
-                <li>Tense a muscle group for 5 seconds</li>
-                <li>Release and notice the relaxation</li>
-                <li>Move to the next muscle group</li>
-                <li>Work through your entire body</li>
+                <li>{t('resources.technique4Step1')}</li>
+                <li>{t('resources.technique4Step2')}</li>
+                <li>{t('resources.technique4Step3')}</li>
+                <li>{t('resources.technique4Step4')}</li>
               </ol>
-              <p className="technique-description">
-                Creates awareness of tension and promotes deep relaxation.
-              </p>
+              <p className="technique-description">{t('resources.technique4Desc')}</p>
             </div>
           </div>
         </section>
 
        {/* Additional Resources – Tunisia */}
 <section className="resource-section">
-  <h2>📚 Helpful Resources in Tunisia</h2>
+  <h2>{t('resources.tunisiaResources')}</h2>
 
   <div className="resources-list">
     <div className="resource-item">
-      <h3>Mental Health Organizations</h3>
+      <h3>{t('resources.mentalHealthOrgs')}</h3>
       <ul>
         <li>
           <a href="https://psyquilibre.tn" target="_blank" rel="noreferrer">
-            PsyQuilibre – Psychological support for young people and students
+            {t('resources.org1')}
           </a>
         </li>
         <li>
           <a href="https://chirp.tn/wp/en/home-english/" target="_blank" rel="noreferrer">
-            CHiRP – Prevention and early detection of mental health disorders
+            {t('resources.org2')}
           </a>
         </li>
         <li>
           <a href="https://healthandpsychology.org" target="_blank" rel="noreferrer">
-            Health & Psychology – Association of psychologists in Tunisia
+            {t('resources.org3')}
           </a>
         </li>
         <li>
           <a href="https://stpea.tn" target="_blank" rel="noreferrer">
-            STPEA – Child and adolescent mental health services
+            {t('resources.org4')}
           </a>
         </li>
       </ul>
     </div>
 
     <div className="resource-item">
-      <h3>Crisis Support & Assistance</h3>
+      <h3>{t('resources.crisisSupport')}</h3>
       <ul>
         <li>
-          National Psychological Assistance Hotline: <strong>8010 5050</strong>
+          {t('resources.nationalHotline')}: <strong>8010 5050</strong>
         </li>
         <li>
-          Medical Emergency (SAMU): <strong>190</strong>
+          {t('resources.samu')}: <strong>190</strong>
         </li>
         <li>
-          Ministry of Health – Mental Health Services
+          {t('resources.ministryHealth')}
         </li>
       </ul>
     </div>
 
     <div className="resource-item">
-      <h3>Wellness Apps & Tools</h3>
+      <h3>{t('resources.wellnessApps')}</h3>
       <ul>
-        <li>Headspace – Meditation and stress management</li>
-        <li>Calm – Sleep and relaxation</li>
-        <li>Insight Timer – Free meditation</li>
-        <li>Wysa – AI-assisted emotional support</li>
+        <li>{t('resources.app1')}</li>
+        <li>{t('resources.app2')}</li>
+        <li>{t('resources.app3')}</li>
+        <li>{t('resources.app4')}</li>
       </ul>
     </div>
   </div>
@@ -337,15 +294,11 @@ function ResourcesPage() {
 
         {/* Call to Action */}
         <section className="resource-section cta">
-          <h2>You Don't Have to Face This Alone</h2>
-          <p>
-            Reach out today. Our compassionate professionals are ready to support you through this
-            difficult time. Every conversation is confidential, judgment-free, and could change
-            your life.
-          </p>
+          <h2>{t('resources.notAlone')}</h2>
+          <p>{t('resources.notAloneText')}</p>
           <div style={{ textAlign: 'center' }}>
             <button className="btn-primary btn-large">
-              💬 Start a Conversation with a Psychologist
+              💬 {t('resources.startConversation')}
             </button>
           </div>
         </section>
