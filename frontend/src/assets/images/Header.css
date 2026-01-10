@@ -1,0 +1,204 @@
+/* Header Styles */
+.header {
+  background-color: var(--neutral-white);
+  box-shadow: var(--shadow-light);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 700;
+  color: var(--primary-blue);
+  transition: transform var(--transition-fast);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  transition: all var(--transition-fast);
+}
+
+.logo:hover .logo-image {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.logo-text {
+  font-size: 2rem;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-xl);
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: var(--neutral-text-dark);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: var(--spacing-sm);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-blue);
+  transition: width var(--transition-fast);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hotline Badge */
+.hotline-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: var(--secondary-green);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.hotline-label {
+  color: var(--neutral-white);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.hotline-number {
+  color: var(--neutral-white);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hotline-number:hover {
+  text-decoration: underline;
+}
+
+/* Menu Toggle Button (Mobile) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: var(--spacing-sm);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--neutral-text-dark);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    background-color: var(--neutral-white);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-medium);
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hotline-badge {
+    width: 100%;
+    justify-content: center;
+    order: 3;
+  }
+
+  .logo {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: var(--spacing-md);
+  }
+
+  .logo-text {
+    font-size: var(--font-size-base);
+  }
+
+  .hotline-badge {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .hotline-label,
+  .hotline-number {
+    font-size: var(--font-size-sm);
+  }
+}
