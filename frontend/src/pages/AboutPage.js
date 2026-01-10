@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import './AboutPage.css';
 
 /**
@@ -8,6 +9,7 @@ import './AboutPage.css';
  */
 function AboutPage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <main id="main-content">
@@ -103,8 +105,8 @@ function AboutPage() {
           <h2>{t('about.readyToStart')}</h2>
           <p>{t('about.readyToStartText')}</p>
           <div className="cta-buttons">
-            <button className="btn-primary btn-large">📞 {t('about.callNow')}</button>
-            <button className="btn-secondary btn-large">💬 {t('about.chatWithPsy')}</button>
+            <button className="btn-primary btn-large" onClick={() => window.open('https://wa.me/21653701678', '_blank')}>📞 {t('about.callNow')}</button>
+            <button className="btn-secondary btn-large" onClick={() => navigate('/psychologists')}>💬 {t('about.chatWithPsy')}</button>
           </div>
         </div>
       </section>

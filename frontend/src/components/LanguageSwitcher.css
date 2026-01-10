@@ -1,40 +1,109 @@
 .language-switcher {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+  position: relative;
+  display: inline-block;
 }
 
-.lang-btn {
+.lang-selector-btn {
   background: transparent;
   border: 2px solid var(--primary-blue);
   color: var(--primary-blue);
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 600;
   font-size: 12px;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
 }
 
-.lang-btn:hover {
+.lang-selector-btn:hover {
   background-color: var(--primary-light-blue);
   color: var(--neutral-white);
   border-color: var(--primary-light-blue);
 }
 
-.lang-btn.active {
+.dropdown-arrow {
+  display: inline-block;
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+.lang-selector-btn[aria-expanded="true"] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--neutral-white);
+  border: 2px solid var(--primary-blue);
+  border-radius: 8px;
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 180px;
+  overflow: hidden;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  color: var(--neutral-dark);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.lang-option:hover {
+  background-color: var(--primary-light-blue);
+  color: var(--neutral-white);
+}
+
+.lang-option.active {
   background-color: var(--primary-blue);
   color: var(--neutral-white);
-  border-color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.lang-option .flag {
+  font-size: 18px;
+}
+
+.lang-option .label {
+  flex: 1;
+}
+
+.lang-option .checkmark {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
-  .language-switcher {
-    gap: 4px;
+  .lang-selector-btn {
+    padding: 6px 10px;
+    font-size: 11px;
   }
 
-  .lang-btn {
-    padding: 4px 10px;
-    font-size: 11px;
+  .language-dropdown {
+    min-width: 160px;
+  }
+
+  .lang-option {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .lang-option .flag {
+    font-size: 16px;
   }
 }
