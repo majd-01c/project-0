@@ -1,0 +1,40 @@
+.language-switcher {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  background-color: var(--primary-light-blue);
+  color: var(--neutral-white);
+  border-color: var(--primary-light-blue);
+}
+
+.lang-btn.active {
+  background-color: var(--primary-blue);
+  color: var(--neutral-white);
+  border-color: var(--primary-blue);
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    gap: 4px;
+  }
+
+  .lang-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+}

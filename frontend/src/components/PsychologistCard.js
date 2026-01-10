@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './PsychologistCard.css';
 
 /**
@@ -7,6 +8,7 @@ import './PsychologistCard.css';
  * Props: { name, specialty, availability, bio, contactUrl }
  */
 function PsychologistCard({ name, gender, specialty, availability, bio, contactUrl }) {
+  const { t } = useTranslation();
   return (
     <div className="psychologist-card" role="article" aria-label={`Psychologist: ${name}`}>
       <div className="psychologist-avatar">
@@ -19,23 +21,23 @@ function PsychologistCard({ name, gender, specialty, availability, bio, contactU
       <div className="psychologist-info">
         <h3>{name}</h3>
         <p className="specialty">
-          <strong>Specialty:</strong> {specialty}
+          <strong>{t('common.specialty')}:</strong> {specialty}
         </p>
 
-        <div className="availability" aria-label={`Available via: ${availability.join(', ')}`}>
+        <div className="availability" aria-label={`${t('common.availableVia')}: ${availability.join(', ')}`}>
           {availability.includes('online') && (
-            <span className="badge badge-online" title="Online consultation available">
-              💻 Online
+            <span className="badge badge-online" title={t('common.onlineConsultation')}>
+              💻 {t('common.online')}
             </span>
           )}
           {availability.includes('phone') && (
-            <span className="badge badge-phone" title="Phone consultation available">
-              ☎️ Phone
+            <span className="badge badge-phone" title={t('common.phoneConsultation')}>
+              ☎️ {t('common.phone')}
             </span>
           )}
           {availability.includes('inperson') && (
-            <span className="badge badge-inperson" title="In-person consultation available">
-              👤 In-Person
+            <span className="badge badge-inperson" title={t('common.inPersonConsultation')}>
+              👤 {t('common.inPerson')}
             </span>
           )}
         </div>
@@ -50,7 +52,7 @@ function PsychologistCard({ name, gender, specialty, availability, bio, contactU
             }
           }}
         >
-          Contact {name.split(' ')[0]}
+          {t('common.contact')} {name.split(' ')[0]}
         </button>
       </div>
     </div>

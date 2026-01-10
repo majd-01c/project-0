@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import PsychologistCard from '../components/PsychologistCard';
 import './PsychologistsPage.css';
 
@@ -8,60 +9,61 @@ import './PsychologistsPage.css';
  * (Mock data for academic/demo purposes)
  */
 function PsychologistsPage() {
+  const { t } = useTranslation();
   // Mock data – Tunisian context
   const psychologists = [
     {
       id: 1,
-      name: 'Dr. Amina Ben Salah',
+      name: t('psychologists.psychologist1Name'),
       gender: 'female',
-      specialty: 'Depression & Anxiety',
+      specialty: t('psychologists.psychologist1Specialty'),
       availability: ['online', 'phone', 'inperson'],
-      bio: 'Licensed clinical psychologist in Tunisia with 10+ years of experience. Specializes in anxiety disorders and depression using CBT approaches.',
+      bio: t('psychologists.psychologist1Bio'),
       contactUrl: 'tel:80105050',
     },
     {
       id: 2,
-      name: 'Dr. Mohamed Trabelsi',
+      name: t('psychologists.psychologist2Name'),
       gender: 'male',
-      specialty: 'Crisis Intervention & Suicidal Ideation',
+      specialty: t('psychologists.psychologist2Specialty'),
       availability: ['online', 'phone'],
-      bio: 'Psychologist trained in crisis intervention and emotional support for individuals at risk. Works closely with national support services.',
+      bio: t('psychologists.psychologist2Bio'),
       contactUrl: 'tel:80105050',
     },
     {
       id: 3,
-      name: 'Dr. Sara Gharbi',
+      name: t('psychologists.psychologist3Name'),
       gender: 'female',
-      specialty: 'Family Therapy & Relationships',
+      specialty: t('psychologists.psychologist3Specialty'),
       availability: ['online', 'inperson'],
-      bio: 'Specialist in family therapy helping couples and families improve communication and emotional wellbeing.',
+      bio: t('psychologists.psychologist3Bio'),
       contactUrl: 'tel:80105050',
     },
     {
       id: 4,
-      name: 'Dr. Youssef Mabrouk',
+      name: t('psychologists.psychologist4Name'),
       gender: 'male',
-      specialty: 'Addiction & Behavioral Disorders',
+      specialty: t('psychologists.psychologist4Specialty'),
       availability: ['phone', 'inperson'],
-      bio: 'Experienced in addiction support and behavioral therapy, focusing on recovery and long-term wellbeing.',
+      bio: t('psychologists.psychologist4Bio'),
       contactUrl: 'tel:80105050',
     },
     {
       id: 5,
-      name: 'Dr. Ines Kacem',
+      name: t('psychologists.psychologist5Name'),
       gender: 'female',
-      specialty: 'Trauma & PTSD',
+      specialty: t('psychologists.psychologist5Specialty'),
       availability: ['online', 'phone', 'inperson'],
-      bio: 'Trauma-informed psychologist supporting individuals affected by emotional trauma and stressful life events.',
+      bio: t('psychologists.psychologist5Bio'),
       contactUrl: 'tel:80105050',
     },
     {
       id: 6,
-      name: 'Dr. Hichem Zoghlami',
+      name: t('psychologists.psychologist6Name'),
       gender: 'male',
-      specialty: 'Students & Young Adults',
+      specialty: t('psychologists.psychologist6Specialty'),
       availability: ['online', 'phone'],
-      bio: 'Focuses on student mental health, stress management, academic pressure, and life transitions.',
+      bio: t('psychologists.psychologist6Bio'),
       contactUrl: 'tel:80105050',
     },
   ];
@@ -69,27 +71,21 @@ function PsychologistsPage() {
   return (
     <main id="main-content">
       <section className="psychologists-hero">
-        <h1>Our Psychologists in Tunisia</h1>
-        <p>Compassionate professionals committed to your mental wellbeing</p>
+        <h1>{t('psychologists.title')}</h1>
+        <p>{t('psychologists.subtitle')}</p>
       </section>
 
       <div className="psychologists-content">
         <section className="psychologists-intro">
-          <h2>Find the Right Support</h2>
-          <p>
-            Our platform connects you with qualified psychologists in Tunisia.
-            Each professional brings expertise in specific mental health areas
-            and is committed to ethical, confidential, and respectful care.
-          </p>
+          <h2>{t('psychologists.findSupport')}</h2>
+          <p>{t('psychologists.intro')}</p>
 
           <div className="specialties-info">
             <p>
-              <strong>Available through:</strong> Online sessions, phone calls,
-              and in-person consultations
+              <strong>{t('psychologists.availableThrough')}:</strong> {t('psychologists.availableMethods')}
             </p>
             <p>
-              <strong>Specialties include:</strong> Depression, anxiety, crisis
-              support, trauma, addiction, family therapy, and student wellbeing
+              <strong>{t('psychologists.specialties')}:</strong> {t('psychologists.specialtiesList')}
             </p>
           </div>
         </section>
@@ -101,79 +97,76 @@ function PsychologistsPage() {
         </section>
 
         <section className="how-to-connect">
-          <h2>How to Get Support</h2>
+          <h2>{t('psychologists.howToConnect')}</h2>
 
           <div className="steps-grid">
             <div className="step-item">
               <div className="step-icon">📞</div>
-              <h3>Call for Help</h3>
-              <p>National psychological support line: <strong>8010 5050</strong></p>
+              <h3>{t('psychologists.step1Title')}</h3>
+              <p>{t('psychologists.step1Desc')}</p>
             </div>
 
             <div className="step-item">
               <div className="step-icon">💬</div>
-              <h3>Online Support</h3>
-              <p>Connect with a psychologist through online consultation</p>
+              <h3>{t('psychologists.step2Title')}</h3>
+              <p>{t('psychologists.step2Desc')}</p>
             </div>
 
             <div className="step-item">
               <div className="step-icon">📅</div>
-              <h3>Book a Session</h3>
-              <p>Schedule an appointment based on availability</p>
+              <h3>{t('psychologists.step3Title')}</h3>
+              <p>{t('psychologists.step3Desc')}</p>
             </div>
 
             <div className="step-item">
               <div className="step-icon">🤝</div>
-              <h3>Begin Your Journey</h3>
-              <p>Receive professional guidance in a safe and supportive space</p>
+              <h3>{t('psychologists.step4Title')}</h3>
+              <p>{t('psychologists.step4Desc')}</p>
             </div>
           </div>
         </section>
 
         <section className="commitment-section">
-          <h2>Our Commitment</h2>
+          <h2>{t('psychologists.ourCommitment')}</h2>
 
           <div className="commitment-grid">
             <div className="commitment-item">
-              <h3>✓ Qualified Professionals</h3>
-              <p>Licensed psychologists practicing in Tunisia</p>
+              <h3>✓ {t('psychologists.commitment1Title')}</h3>
+              <p>{t('psychologists.commitment1Desc')}</p>
             </div>
 
             <div className="commitment-item">
-              <h3>✓ Confidentiality</h3>
-              <p>Your privacy is respected and protected</p>
+              <h3>✓ {t('psychologists.commitment2Title')}</h3>
+              <p>{t('psychologists.commitment2Desc')}</p>
             </div>
 
             <div className="commitment-item">
-              <h3>✓ Ethical Care</h3>
-              <p>Evidence-based and culturally sensitive approaches</p>
+              <h3>✓ {t('psychologists.commitment3Title')}</h3>
+              <p>{t('psychologists.commitment3Desc')}</p>
             </div>
 
             <div className="commitment-item">
-              <h3>✓ Accessibility</h3>
-              <p>Support adapted to students and young adults</p>
+              <h3>✓ {t('psychologists.commitment4Title')}</h3>
+              <p>{t('psychologists.commitment4Desc')}</p>
             </div>
 
             <div className="commitment-item">
-              <h3>✓ Crisis Support</h3>
-              <p>Emergency guidance available through national services</p>
+              <h3>✓ {t('psychologists.commitment5Title')}</h3>
+              <p>{t('psychologists.commitment5Desc')}</p>
             </div>
 
             <div className="commitment-item">
-              <h3>✓ Respect & Inclusion</h3>
-              <p>Non-judgmental and inclusive mental health support</p>
+              <h3>✓ {t('psychologists.commitment6Title')}</h3>
+              <p>{t('psychologists.commitment6Desc')}</p>
             </div>
           </div>
         </section>
 
         <section className="cta-section">
-          <h2>You Are Not Alone</h2>
-          <p>
-            Seeking help is a sign of strength. Support is available,
-            and taking the first step can change everything.
-          </p>
+          <h2>{t('psychologists.youAreNotAlone')}</h2>
+          <p>{t('psychologists.youAreNotAloneText')}</p>
           <button className="btn-primary btn-large">
-            📞 Call Now: 53701678
+            📞 {t('psychologists.callNow')}
           </button>
         </section>
       </div>

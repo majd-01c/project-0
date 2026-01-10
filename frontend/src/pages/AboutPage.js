@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './AboutPage.css';
 
 /**
@@ -6,141 +7,104 @@ import './AboutPage.css';
  * Information about the organization's mission, values, and approach
  */
 function AboutPage() {
+  const { t } = useTranslation();
+
   return (
     <main id="main-content">
       <section className="about-hero">
-        <h1>About M3ak</h1>
-        <p>Dedicated to saving lives and supporting mental health</p>
+        <h1>{t('about.title')}</h1>
+        <p>{t('about.subtitle')}</p>
       </section>
 
       <section className="about-content">
         <div className="about-section">
-          <h2>Our Mission</h2>
+          <h2>{t('about.ourMission')}</h2>
           <p>
-            M3ak is dedicated to preventing suicide and providing compassionate,
-            professional psychological support to individuals in emotional distress. We believe
-            that every life has value and that mental health support should be accessible to
-            everyone, regardless of circumstance.
+            {t('about.missionStatement')}
           </p>
         </div>
 
         <div className="about-section">
-          <h2>Why This Matters</h2>
+          <h2>{t('about.whyMatters')}</h2>
           <p>
-            Mental health conditions like depression, anxiety, and suicidal thoughts are serious
-            but treatable. Many people suffer in silence, unsure where to turn or afraid to reach
-            out. We're here to break that silence and provide the compassionate care that saves
-            lives.
+            {t('about.whyMattersText')}
           </p>
           <ul>
-            <li>Suicide is a leading cause of death in many age groups</li>
-            <li>Many people don't know where to find help when they need it most</li>
-            <li>Professional support significantly improves outcomes</li>
-            <li>Early intervention and connection can save lives</li>
+            <li>{t('about.whyMattersBullet1')}</li>
+            <li>{t('about.whyMattersBullet2')}</li>
+            <li>{t('about.whyMattersBullet3')}</li>
+            <li>{t('about.whyMattersBullet4')}</li>
           </ul>
         </div>
 
         <div className="about-section">
-          <h2>Our Core Values</h2>
+          <h2>{t('about.ourValues')}</h2>
           <div className="values-list">
             <div className="value-card">
-              <h3>💚 Empathy</h3>
-              <p>
-                We listen with genuine care and without judgment. Your feelings are valid, and we
-                honor your experience.
-              </p>
+              <h3>💚 {t('about.value1')}</h3>
+              <p>{t('about.value1Desc')}</p>
             </div>
             <div className="value-card">
-              <h3>🔒 Confidentiality</h3>
-              <p>
-                Your privacy is sacred. All conversations are strictly confidential and protected
-                by professional standards.
-              </p>
+              <h3>🔒 {t('about.value2')}</h3>
+              <p>{t('about.value2Desc')}</p>
             </div>
             <div className="value-card">
-              <h3>🤝 Respect</h3>
-              <p>
-                We respect your autonomy, dignity, and unique circumstances. You are the expert
-                on your own life.
-              </p>
+              <h3>🤝 {t('about.value3')}</h3>
+              <p>{t('about.value3Desc')}</p>
             </div>
             <div className="value-card">
-              <h3>💪 Hope</h3>
-              <p>
-                We believe in your resilience and potential. Even in darkness, there is always
-                hope for a better tomorrow.
-              </p>
+              <h3>💪 {t('about.value4')}</h3>
+              <p>{t('about.value4Desc')}</p>
             </div>
             <div className="value-card">
-              <h3>🎯 Accessibility</h3>
-              <p>
-                Support should be available to everyone. We offer multiple ways to connect and
-                support different needs.
-              </p>
+              <h3>🎯 {t('about.value5')}</h3>
+              <p>{t('about.value5Desc')}</p>
             </div>
             <div className="value-card">
-              <h3>📚 Excellence</h3>
-              <p>
-                Our team consists of licensed, trained professionals committed to the highest
-                standards of care.
-              </p>
+              <h3>📚 {t('about.value6')}</h3>
+              <p>{t('about.value6Desc')}</p>
             </div>
           </div>
         </div>
 
         <div className="about-section">
-          <h2>How We Approach Support</h2>
+          <h2>{t('about.howWeApproach')}</h2>
           <ol>
             <li>
-              <strong>Immediate Response:</strong> 24/7 hotline and chat support for anyone in
-              crisis
+              <strong>{t('about.approach1Title')}:</strong> {t('about.approach1Desc')}
             </li>
             <li>
-              <strong>Active Listening:</strong> We listen without judgment and validate your
-              feelings
+              <strong>{t('about.approach2Title')}:</strong> {t('about.approach2Desc')}
             </li>
             <li>
-              <strong>Professional Assessment:</strong> Our trained team assesses your needs and
-              refers to appropriate services
+              <strong>{t('about.approach3Title')}:</strong> {t('about.approach3Desc')}
             </li>
             <li>
-              <strong>Ongoing Support:</strong> Connect with psychologists for ongoing therapy and
-              counseling
+              <strong>{t('about.approach4Title')}:</strong> {t('about.approach4Desc')}
             </li>
             <li>
-              <strong>Resources & Tools:</strong> Provide educational materials and coping
-              strategies
+              <strong>{t('about.approach5Title')}:</strong> {t('about.approach5Desc')}
             </li>
             <li>
-              <strong>Safety Planning:</strong> Help you develop plans to keep safe during
-              difficult times
+              <strong>{t('about.approach6Title')}:</strong> {t('about.approach6Desc')}
             </li>
           </ol>
         </div>
 
         <div className="about-section important-notice">
-          <h2>⚠️ Important Notice</h2>
+          <h2>⚠️ {t('about.importantNotice')}</h2>
           <p>
-            <strong>
-              Hope & Support does not replace emergency services. If you are in immediate danger,
-              please call 197 or go to your nearest emergency room.
-            </strong>
+            <strong>{t('about.importantNoticeText')}</strong>
           </p>
-          <p>
-            We are a support service designed to provide psychological help and resources. For
-            life-threatening emergencies, always contact emergency services.
-          </p>
+          <p>{t('about.importantNoticeSecond')}</p>
         </div>
 
         <div className="about-section cta-section">
-          <h2>Ready to Take the First Step?</h2>
-          <p>
-            Reaching out is a sign of strength. Connect with us today and let us support you
-            through this journey.
-          </p>
+          <h2>{t('about.readyToStart')}</h2>
+          <p>{t('about.readyToStartText')}</p>
           <div className="cta-buttons">
-            <button className="btn-primary btn-large">📞 Call Now: 53701678-HELP-NOW</button>
-            <button className="btn-secondary btn-large">💬 Chat with a Psychologist</button>
+            <button className="btn-primary btn-large">📞 {t('about.callNow')}</button>
+            <button className="btn-secondary btn-large">💬 {t('about.chatWithPsy')}</button>
           </div>
         </div>
       </section>

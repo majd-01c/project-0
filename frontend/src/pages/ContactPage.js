@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './ContactPage.css';
 
 /**
@@ -6,6 +7,7 @@ import './ContactPage.css';
  * Emergency contact information and support form
  */
 function ContactPage() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,83 +39,80 @@ function ContactPage() {
   return (
     <main id="main-content">
       <section className="contact-hero">
-        <h1>Contact & Emergency Support</h1>
-        <p>Multiple ways to reach us when you need help</p>
+        <h1>{t('contact.title')}</h1>
+        <p>{t('contact.subtitle')}</p>
       </section>
 
       <div className="contact-content">
         {/* Emergency Alert */}
         <section className="emergency-alert">
-          <h2>🚨 In a Life-Threatening Emergency?</h2>
+          <h2>🚨 {t('contact.emergency')}</h2>
           <p>
-            <strong>Call 190 (SAMU) or go to your nearest Emergency Room immediately.</strong>
+            <strong>{t('contact.emergencyCall')}</strong>
           </p>
-          <p>This website provides psychological support but is not a substitute for emergency services.</p>
+          <p>{t('contact.emergencyDescription')}</p>
         </section>
 
         {/* Contact Methods Grid */}
         <section className="contact-methods">
-          <h2>Ways to Reach Us</h2>
+          <h2>{t('contact.waysToReach')}</h2>
 
           <div className="methods-grid">
             <div className="method-card emergency">
               <div className="method-icon">📞</div>
-              <h3>24/7 Hotline</h3>
-              <p className="method-description">Call immediately for crisis support</p>
+              <h3>{t('contact.hotline')}</h3>
+              <p className="method-description">{t('contact.hotlineDesc')}</p>
               <a href="tel:+21653701678" className="method-link">
-                National Psychological Assistance: 53701678
+                {t('contact.hotlineNumber')}
               </a>
-              <p className="availability">Available 24 hours, 7 days a week</p>
+              <p className="availability">{t('contact.available247')}</p>
             </div>
 
             <div className="method-card">
               <div className="method-icon">💬</div>
-              <h3>WhatsApp Support</h3>
-              <p className="method-description">Chat when you can't talk on the phone</p>
-              <a href="https://wa.me/21653701678" className="method-link">Message via WhatsApp</a>
-              <p className="availability">Available 24/7, free and confidential</p>
+              <h3>{t('contact.whatsapp')}</h3>
+              <p className="method-description">{t('contact.whatsappDesc')}</p>
+              <a href="https://wa.me/21653701678" className="method-link">{t('contact.whatsappLink')}</a>
+              <p className="availability">{t('contact.whatsappAvail')}</p>
             </div>
 
             <div className="method-card">
               <div className="method-icon">📧</div>
-              <h3>Email Support</h3>
-              <p className="method-description">Non-emergency email support</p>
+              <h3>{t('contact.email')}</h3>
+              <p className="method-description">{t('contact.emailDesc')}</p>
               <a href="mailto:support@m3ak.com" className="method-link">
-                support@m3ak.com
+                {t('contact.emailAddress')}
               </a>
-              <p className="availability">Response within 24 hours</p>
+              <p className="availability">{t('contact.emailResponse')}</p>
             </div>
 
             <div className="method-card">
               <div className="method-icon">💻</div>
-              <h3>Live Chat</h3>
-              <p className="method-description">Connect with a counselor online</p>
+              <h3>{t('contact.liveChat')}</h3>
+              <p className="method-description">{t('contact.liveChatDesc')}</p>
               <button className="method-link" style={{ background: 'none', border: 'none', padding: 0 }}>
-                Start Chat Now
+                {t('contact.liveChatStart')}
               </button>
-              <p className="availability">Available 9 AM - 11 PM </p>
+              <p className="availability">{t('contact.liveChatAvail')} </p>
             </div>
           </div>
         </section>
 
         {/* Contact Form */}
         <section className="contact-form-section">
-          <h2>Send Us a Message</h2>
-          <p>
-            Have a question or need more information? Fill out the form below and we'll get back to
-            you as soon as possible.
-          </p>
+          <h2>{t('contact.sendMessage')}</h2>
+          <p>{t('contact.formDescription')}</p>
 
           {submitted ? (
             <div className="success-message">
-              <h3>✓ Message Received</h3>
-              <p>Thank you for reaching out. We'll respond as soon as possible.</p>
-              <p>If you're in crisis, please call our hotline: 8010 5050</p>
+              <h3>✓ {t('contact.messageReceived')}</h3>
+              <p>{t('contact.thankYou')}</p>
+              <p>{t('contact.crisisPrompt')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
-                <label htmlFor="name">Name *</label>
+                <label htmlFor="name">{t('contact.formName')} *</label>
                 <input
                   type="text"
                   id="name"
@@ -121,12 +120,12 @@ function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  aria-label="Your name"
+                  aria-label={t('contact.formName')}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email *</label>
+                <label htmlFor="email">{t('contact.formEmail')} *</label>
                 <input
                   type="email"
                   id="email"
@@ -134,37 +133,37 @@ function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  aria-label="Your email"
+                  aria-label={t('contact.formEmail')}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="phone">Phone (Optional)</label>
+                <label htmlFor="phone">{t('contact.formPhone')}</label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  aria-label="Your phone number"
+                  aria-label={t('contact.formPhone')}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Message *</label>
+                <label htmlFor="message">{t('contact.formMessage')} *</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  placeholder="Tell us how we can help..."
-                  aria-label="Your message"
+                  placeholder={t('contact.formPlaceholder')}
+                  aria-label={t('contact.formMessage')}
                 ></textarea>
               </div>
 
               <button type="submit" className="btn-primary btn-large">
-                Send Message
+                {t('contact.sendButton')}
               </button>
             </form>
           )}
@@ -172,146 +171,109 @@ function ContactPage() {
 
         {/* Support Options */}
         <section className="support-options">
-          <h2>Other Ways We Can Help</h2>
+          <h2>{t('contact.otherWays')}</h2>
 
           <div className="options-grid">
             <div className="option-card">
-              <h3>👥 Support Groups</h3>
-              <p>Join peer support groups where you can connect with others going through similar experiences.</p>
+              <h3>👥 {t('contact.option1Title')}</h3>
+              <p>{t('contact.option1Desc')}</p>
             </div>
 
             <div className="option-card">
-              <h3>📚 Educational Resources</h3>
-              <p>Learn more about mental health, warning signs, and coping strategies through our resource library.</p>
+              <h3>📚 {t('contact.option2Title')}</h3>
+              <p>{t('contact.option2Desc')}</p>
             </div>
 
             <div className="option-card">
-              <h3>🧘 Self-Care Tools</h3>
-              <p>Access guided meditations, breathing exercises, and wellness resources at any time.</p>
+              <h3>🧘 {t('contact.option3Title')}</h3>
+              <p>{t('contact.option3Desc')}</p>
             </div>
 
             <div className="option-card">
-              <h3>👨‍⚕️ Professional Counseling</h3>
-              <p>Schedule appointments with licensed psychologists and therapists for ongoing support.</p>
+              <h3>👨‍⚕️ {t('contact.option4Title')}</h3>
+              <p>{t('contact.option4Desc')}</p>
             </div>
 
             <div className="option-card">
-              <h3>🏥 Crisis Planning</h3>
-              <p>Work with our team to develop a personalized safety plan for difficult moments.</p>
+              <h3>🏥 {t('contact.option5Title')}</h3>
+              <p>{t('contact.option5Desc')}</p>
             </div>
 
             <div className="option-card">
-              <h3>🌍 Community Resources</h3>
-              <p>Connect with local mental health services and community support organizations.</p>
+              <h3>🌍 {t('contact.option6Title')}</h3>
+              <p>{t('contact.option6Desc')}</p>
             </div>
           </div>
         </section>
 
         {/* Legal Information */}
         <section className="legal-section">
-          <h2>Important Information & Disclaimers</h2>
+          <h2>{t('contact.importantInfo')}</h2>
 
           <div className="legal-cards">
             <div className="legal-card">
-              <h3>⚠️ Emergency Services</h3>
-              <p>
-                This website does not replace emergency medical services. If you or someone you know
-                is in immediate danger, call 911 or go to the nearest emergency room.
-              </p>
+              <h3>⚠️ {t('contact.legal1Title')}</h3>
+              <p>{t('contact.legal1Desc')}</p>
             </div>
 
             <div className="legal-card">
-              <h3>📋 Confidentiality & Privacy</h3>
-              <p>
-                All information shared with our counselors is confidential and protected by
-                professional ethical standards and applicable laws. Exceptions apply only when
-                immediate danger to yourself or others exists.
-              </p>
+              <h3>📋 {t('contact.legal2Title')}</h3>
+              <p>{t('contact.legal2Desc')}</p>
             </div>
 
             <div className="legal-card">
-              <h3>⚕️ Professional Standards</h3>
-              <p>
-                All our psychologists and counselors are licensed professionals adhering to strict
-                ethical guidelines. However, online support is not suitable for everyone and may not
-                be appropriate during severe crises.
-              </p>
+              <h3>⚕️ {t('contact.legal3Title')}</h3>
+              <p>{t('contact.legal3Desc')}</p>
             </div>
 
             <div className="legal-card">
-              <h3>🔒 Data Security</h3>
-              <p>
-                We use industry-standard encryption and security measures to protect your personal
-                information. For details, please see our Privacy Policy.
-              </p>
+              <h3>🔒 {t('contact.legal4Title')}</h3>
+              <p>{t('contact.legal4Desc')}</p>
             </div>
           </div>
         </section>
 
         {/* FAQ */}
         <section className="contact-faq">
-          <h2>Frequently Asked Questions</h2>
+          <h2>{t('contact.faqTitle')}</h2>
 
           <div className="faq-items">
             <details className="faq-item">
-              <summary>What happens when I call the hotline?</summary>
-              <p>
-                A trained counselor will answer your call. They'll listen to what you're going
-                through, provide immediate support, and help you access appropriate resources. You
-                can choose to continue the conversation or arrange follow-up care.
-              </p>
+              <summary>{t('contact.faq1Question')}</summary>
+              <p>{t('contact.faq1Answer')}</p>
             </details>
 
             <details className="faq-item">
-              <summary>How long is the wait time to speak with someone?</summary>
-              <p>
-                We prioritize getting you connected as quickly as possible. Average wait time for
-                the hotline is under 2 minutes. During peak times, it may be longer, but you'll be
-                speaking with someone trained to help.
-              </p>
+              <summary>{t('contact.faq2Question')}</summary>
+              <p>{t('contact.faq2Answer')}</p>
             </details>
 
             <details className="faq-item">
-              <summary>Can I remain anonymous?</summary>
-              <p>
-                Yes. You don't need to provide your name or any identifying information to call our
-                hotline. Your privacy is important to us. However, providing information may help us
-                serve you better.
-              </p>
+              <summary>{t('contact.faq3Question')}</summary>
+              <p>{t('contact.faq3Answer')}</p>
             </details>
 
             <details className="faq-item">
-              <summary>Is the service available in Arabic?</summary>
-              <p>
-                Our team can provide support in both French and Arabic. Please let us know your
-                preferred language when contacting us, and we'll connect you with a counselor who
-                speaks it.
-              </p>
+              <summary>{t('contact.faq4Question')}</summary>
+              <p>{t('contact.faq4Answer')}</p>
             </details>
 
             <details className="faq-item">
-              <summary>Is there a cost for calling the hotline?</summary>
-              <p>
-                The hotline is completely free. All services are available at no cost to anyone in
-                need of support. Cost should never be a barrier to getting help.
-              </p>
+              <summary>{t('contact.faq5Question')}</summary>
+              <p>{t('contact.faq5Answer')}</p>
             </details>
           </div>
         </section>
 
         {/* Final Message */}
         <section className="final-message">
-          <h2>We're Here For You</h2>
+          <h2>{t('contact.finalTitle')}</h2>
+          <p>{t('contact.finalMessage')}</p>
           <p>
-            Reaching out takes courage. Whether you're struggling, worried about someone you care
-            about, or just need someone to talk to, we're here. No judgment, no shame – just
-            compassionate support from people who care about your wellbeing.
-          </p>
-          <p>
-            <strong>You are not alone. Your life matters. Help is available.</strong>
+            <strong>{t('contact.finalCta')}</strong>
           </p>
           <a href="tel:+21653701678" className="btn-primary btn-large">
-            📞 Call Now: 53701678
+            📞 {t('contact.callNow')}
           </a>
         </section>
       </div>
