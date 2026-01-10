@@ -1,0 +1,125 @@
+/* Psychologist Card Styles */
+.psychologist-card {
+  background-color: var(--neutral-white);
+  border: 1px solid var(--neutral-medium-gray);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.psychologist-card:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-4px);
+  border-color: var(--primary-blue);
+}
+
+.psychologist-avatar {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--primary-light-blue), var(--secondary-light-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.psychologist-avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.psychologist-info {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+.psychologist-info h3 {
+  color: var(--primary-blue);
+  margin: 0;
+  font-size: var(--font-size-lg);
+}
+
+.specialty {
+  color: var(--neutral-dark-gray);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+.availability {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-online {
+  background-color: rgba(74, 144, 226, 0.1);
+  color: var(--primary-blue);
+}
+
+.badge-phone {
+  background-color: rgba(82, 200, 120, 0.1);
+  color: var(--secondary-green);
+}
+
+.badge-inperson {
+  background-color: rgba(243, 156, 18, 0.1);
+  color: var(--accent-warm);
+}
+
+.bio {
+  color: var(--neutral-dark-gray);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.btn-contact {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .psychologist-card {
+    flex-direction: row;
+  }
+
+  .psychologist-avatar {
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  }
+
+  .psychologist-avatar img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .psychologist-info {
+    padding: var(--spacing-md);
+  }
+
+  .btn-contact {
+    margin-top: var(--spacing-md);
+  }
+}

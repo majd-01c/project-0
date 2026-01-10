@@ -1,3 +1,5 @@
+/* The global styles are imported in the App.js via styles/global.css */
+/* This file is kept minimal to avoid duplication */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
