@@ -85,6 +85,14 @@
   padding: var(--spacing-lg);
   border-radius: var(--radius-md);
   color: var(--neutral-white);
+  transition: all var(--transition-normal) ease;
+  cursor: pointer;
+}
+
+.contact-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .contact-item h3 {
@@ -112,6 +120,14 @@
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
   border-left: 4px solid var(--accent-red);
+  transition: all var(--transition-normal) ease;
+  cursor: pointer;
+}
+
+.warning-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-left-color: var(--primary-blue);
 }
 
 .warning-card h3 {
@@ -145,6 +161,14 @@
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   padding-left: var(--spacing-xl);
+  transition: all var(--transition-normal) ease;
+  cursor: pointer;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--secondary-green);
 }
 
 .step-number {
@@ -189,6 +213,14 @@
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
   border-top: 4px solid var(--secondary-green);
+  transition: all var(--transition-normal) ease;
+  cursor: pointer;
+}
+
+.strategy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(52, 184, 84, 0.15);
+  border-top-color: var(--primary-blue);
 }
 
 .strategy-card h3 {
@@ -217,6 +249,14 @@
   border: 2px solid var(--primary-light-blue);
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
+  transition: all var(--transition-normal) ease;
+  cursor: pointer;
+}
+
+.technique-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--secondary-green);
 }
 
 .technique-card h3 {
@@ -256,6 +296,23 @@
   background-color: var(--neutral-light-gray);
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
+  transition: all var(--transition-normal) ease;
+  cursor: pointer;
+}
+
+.resource-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  background-color: var(--primary-light-blue);
+}
+
+.resource-item:hover h3 {
+  color: var(--primary-blue);
+}
+
+.resource-item:hover a {
+  color: var(--secondary-green);
+  text-decoration: underline;
 }
 
 .resource-item h3 {
@@ -320,13 +377,46 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .resources-content {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .warning-signs-grid,
+  .coping-strategies,
+  .resources-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .steps-container,
+  .techniques-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
+  .resources-hero {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
   .resources-hero h1 {
     font-size: 2rem;
   }
 
   .resources-hero p {
     font-size: var(--font-size-lg);
+  }
+
+  .resources-content {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .resource-section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .resource-section h2 {
+    font-size: var(--font-size-xl);
   }
 
   .crisis-contacts,
@@ -342,7 +432,63 @@
     padding-left: var(--spacing-lg);
   }
 
+  .warning-card,
+  .strategy-card,
+  .resource-item,
+  .step,
+  .technique-card {
+    margin-bottom: var(--spacing-sm);
+  }
+
   .resource-section.cta {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-md);
+    margin: var(--spacing-xl) 0 0 0;
+  }
+
+  .resource-section.cta h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .resource-section.cta p {
+    font-size: var(--font-size-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .resources-hero h1 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .resources-hero p {
+    font-size: var(--font-size-md);
+  }
+
+  .resources-content {
+    padding: var(--spacing-md);
+  }
+
+  .resource-section {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .resource-section h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .crisis-box,
+  .warning-card,
+  .strategy-card,
+  .resource-item,
+  .step,
+  .technique-card,
+  .contact-item {
+    padding: var(--spacing-md);
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    font-size: var(--font-size-md);
   }
 }

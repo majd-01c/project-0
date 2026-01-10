@@ -31,19 +31,6 @@ function HomePage() {
             </a>
             <p className="hotline-available">{t('home.available247')}</p>
           </div>
-
-          {/* CTA Buttons */}
-          <div className="hero-buttons">
-            <button className="btn-primary btn-large" aria-label="Call now for immediate help">
-              <span className="btn-icon">📞</span> {t('home.callNow')}
-            </button>
-            <button className="btn-secondary btn-large" aria-label="Chat with a psychologist">
-              <span className="btn-icon">💬</span> {t('home.connectWithCounselor')}
-            </button>
-            <button className="btn-outline btn-large" aria-label="Get help and resources">
-              <span className="btn-icon">📚</span> {t('home.exploreResources')}
-            </button>
-          </div>
         </div>
 
         <div className="hero-visual">
