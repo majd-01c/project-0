@@ -75,6 +75,9 @@ function Header() {
               {t('header.hotlineNumber')}
             </a>
           </div>
+          <Link to="/app" className="btn-login">
+            {t('header.login')}
+          </Link>
         </div>
       </nav>
     </header>
