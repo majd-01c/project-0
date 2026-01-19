@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ResourcesPage from './pages/ResourcesPage';
-import PsychologistsPage from './pages/PsychologistsPage';
-import ContactPage from './pages/ContactPage';
-import './styles/global.css';
+import Header from './vitrine/components/Header';
+import Footer from './vitrine/components/Footer';
+import HomePage from './vitrine/pages/HomePage';
+import AboutPage from './vitrine/pages/AboutPage';
+import ResourcesPage from './vitrine/pages/ResourcesPage';
+import PsychologistsPage from './vitrine/pages/PsychologistsPage';
+import ContactPage from './vitrine/pages/ContactPage';
+import PrivateLayout from './app/main';
+import { ThemeProvider } from './app/context/ThemeContext';
+import './vitrine/styles/global.css';
 import './App.css';
 import './i18n';
 
@@ -26,19 +28,23 @@ function App() {
   }, [i18n.language]);
 
   return (
-    <Router>
-      <div className="app-container">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/resources" element={<ResourcesPage />} />
-          <Route path="/psychologists" element={<PsychologistsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="app-container">
+          <Routes>
+            {/* Admin/App Route - your main.js layout */}
+            <Route path="/app/*" element={<PrivateLayout />} />
+            
+            {/* Public Routes */}
+            <Route path="/" element={<><Header /><HomePage /><Footer /></>} />
+            <Route path="/about" element={<><Header /><AboutPage /><Footer /></>} />
+            <Route path="/resources" element={<><Header /><ResourcesPage /><Footer /></>} />
+            <Route path="/psychologists" element={<><Header /><PsychologistsPage /><Footer /></>} />
+            <Route path="/contact" element={<><Header /><ContactPage /><Footer /></>} />
+          </Routes>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
